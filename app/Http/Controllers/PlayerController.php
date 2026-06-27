@@ -30,7 +30,7 @@ class PlayerController extends Controller
             'first_name' => 'required|string|max:255',
             'last_name' => 'required|string|max:255',
             'birth_date' => 'nullable|date|before:today',
-            'team_id' => 'required|exists:teams,id',
+            'team_id' => 'nullable|exists:teams,id',
         ]);
 
         $player = Player::create($validated);

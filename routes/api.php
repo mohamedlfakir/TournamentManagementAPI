@@ -38,6 +38,10 @@ Route::middleware('auth:sanctum')->group(function () {
         'matches' => 'matchInfo'
     ]);
 
+    Route::post('tournaments/{tournament}/teams', [TournamentController::class, 'addTeams']);
+    Route::post('tournaments/{tournament}/teams/add', [TournamentController::class, 'addSingleTeam']);
+    Route::post('tournaments/{tournament}/teams/remove', [TournamentController::class, 'removeTeam']);
+
 });
 Route::get('/user', function (Request $request) {
     return $request->user();

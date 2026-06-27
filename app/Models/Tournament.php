@@ -32,12 +32,12 @@ class Tournament extends Model
 
     public function rounds(): HasMany
     {
-        return $this->hasMany(Round::class)->orderBy('type_order');
+        return $this->hasMany(Round::class)->orderBy('round_number');
     }
 
     public function teams(): BelongsToMany
     {
-        return $this->belongsToMany(Team::class, 'tournament_team');
+        return $this->belongsToMany(Team::class, 'tournament_teams');
     }
 
     public function matches(): HasManyThrough
